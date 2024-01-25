@@ -21,7 +21,7 @@
     {
       "kind": "DoubleProperty",
       "name": "n_bins",
-      "defaultValue": "10",
+      "defaultValue": 10,
       "values": {},
       "description": "A number indicating the number of desired bins."
     }
