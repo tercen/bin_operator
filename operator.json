@@ -1,9 +1,15 @@
 {
   "name": "Bin",
   "description": "Define intervals based on values' range and bin data points.",
-  "tags": ["data preprocessing"],
-  "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/bin_operator"],
+  "tags": [
+    "preprocessing"
+  ],
+  "authors": [
+    "tercen"
+  ],
+  "urls": [
+    "https://github.com/tercen/bin_operator"
+  ],
   "properties": [
     {
       "kind": "EnumeratedProperty",
@@ -15,10 +21,9 @@
     {
       "kind": "DoubleProperty",
       "name": "n_bins",
-      "defaultValue": 10,
+      "defaultValue": "10",
+      "values": {},
       "description": "A number indicating the number of desired bins."
     }
   ]
 }
-
-
