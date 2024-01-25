@@ -1,6 +1,6 @@
 {
   "name": "Bin",
-  "description": "Define intervals based on values' range and bin data points.",
+  "description": "Defines intervals based on values' range and bin data points.",
   "tags": [
     "preprocessing"
   ],
@@ -15,7 +15,11 @@
       "kind": "EnumeratedProperty",
       "name": "method",
       "defaultValue": "Equal Width",
-      "values": ["Equal Width", "Quantiles", "Pretty"],
+      "values": [
+        "Equal Width",
+        "Quantiles",
+        "Pretty"
+      ],
       "description": "Method to define bins: either Equal width, Quantiles, or Pretty."
     },
     {
