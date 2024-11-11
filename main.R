@@ -97,11 +97,14 @@ n_bins <- ctx$op.value("n_bins", as.double, 10)
 
 if(ctx$hasNumericXAxis) {
   to_select <- c(".y", ".x", ".ci", ".ri")
+  
   out_list <- ctx$select(to_select) %>%
     bin_data_2d(method = method, n_bins_x = n_bins, n_bins_y = n_bins)
 
   out_rel <- out_list$obs_df %>% 
     as_relation() %>%
+    left_join_relation(ctx$crelation, ".ci", ctx$crelation$rids) %>%
+    left_join_relation(ctx$rrelation, ".ri", ctx$rrelation$rids) %>%
     left_join_relation(as_relation(out_list$x_df), ".x_bin_id", paste0(ctx$namespace, ".x_bin_id")) %>%
     left_join_relation(as_relation(out_list$y_df), ".y_bin_id", paste0(ctx$namespace, ".y_bin_id")) %>%
     left_join_relation(as_relation(out_list$xy_df), ".xy_bin_id", paste0(ctx$namespace, ".xy_bin_id")) %>%
