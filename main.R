@@ -113,11 +113,16 @@ if(ctx$hasNumericXAxis) {
     out_list <- ctx$select(c(to_select, ".colorLevels")) %>%
       bin_data_2d(method = method, n_bins_x = n_bins, n_bins_y = n_bins, group = TRUE)
     
+    # use color factors instead of colorLevels
+    col_relation <- ctx$select(c(ctx$colors, ".colorLevels")) %>% 
+      distinct() %>%
+      as_relation()
+    
     out_rel <- out_list$obs_df %>% 
       as_relation() %>%
       left_join_relation(ctx$crelation, ".ci", ctx$crelation$rids) %>%
       left_join_relation(ctx$rrelation, ".ri", ctx$rrelation$rids) %>%
-      left_join_relation(as_relation(ctx$schema), ".colorLevels", ".colorLevels") %>%
+      left_join_relation(col_relation, ".colorLevels", ".colorLevels") %>%
       left_join_relation(as_relation(out_list$x_df),  list(".colorLevels", ".x_bin_id"), list(".x_colorLevels", paste0(ctx$namespace, ".x_bin_id"))) %>%
       left_join_relation(as_relation(out_list$y_df),  list(".colorLevels", ".y_bin_id"), list(".y_colorLevels", paste0(ctx$namespace, ".y_bin_id"))) %>%
       left_join_relation(as_relation(out_list$xy_df), list(".colorLevels", ".xy_bin_id"), list(".xy_colorLevels", paste0(ctx$namespace, ".xy_bin_id"))) %>%
