@@ -62,6 +62,7 @@ bin_data_2d <- function(df, method, n_bins_x, n_bins_y, group = FALSE) {
     obs_df %>%
       group_by(.x_bin_id, .colorLevels) %>%
       summarise(x_count = as.numeric(n())) %>%
+      group_by(.colorLevels) %>%
       mutate(x_prop = x_count / sum(x_count)),
     by = c("x_bin_id" = ".x_bin_id")
   ) %>%
@@ -72,6 +73,7 @@ bin_data_2d <- function(df, method, n_bins_x, n_bins_y, group = FALSE) {
     obs_df %>%
       group_by(.y_bin_id, .colorLevels) %>%
       summarise(y_count = as.numeric(n())) %>%
+      group_by(.colorLevels) %>%
       mutate(y_prop = y_count / sum(y_count)),
     by = c("y_bin_id" = ".y_bin_id")
   ) %>%
@@ -82,6 +84,7 @@ bin_data_2d <- function(df, method, n_bins_x, n_bins_y, group = FALSE) {
     obs_df %>%
       group_by(.xy_bin_id, .colorLevels) %>%
       summarise(xy_count = as.numeric(n())) %>%
+      group_by(.colorLevels) %>%
       mutate(xy_prop = xy_count / sum(xy_count)),
     by = c("xy_bin_id" = ".xy_bin_id")
   ) %>%
