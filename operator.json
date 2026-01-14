@@ -65,12 +65,32 @@
             "metaFactors": [
               {
                 "kind": "MetaFactor",
-                "name": "y-axis",
+                "name": "Y Axis",
                 "type": "numeric",
-                "description": "numeric, measurement, per cell",
+                "description": "Measurement values",
                 "ontologyMapping": "measurement",
                 "crosstabMapping": "y",
                 "cardinality": "1",
+                "factors": []
+              },
+              {
+                "kind": "MetaFactor",
+                "name": "X Axis",
+                "type": "numeric",
+                "description": "Optional second measurement for 2D binning",
+                "ontologyMapping": "measurement",
+                "crosstabMapping": "x",
+                "cardinality": "0..1",
+                "factors": []
+              },
+              {
+                "kind": "MetaFactor",
+                "name": "Color",
+                "type": "",
+                "description": "Optional grouping factor",
+                "ontologyMapping": "color",
+                "crosstabMapping": "color",
+                "cardinality": "0..1",
                 "factors": []
               }
             ]
