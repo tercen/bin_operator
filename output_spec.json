@@ -1,0 +1,137 @@
+{
+  "outputSpecs": [
+    {
+      "kind": "ConditionalJoinSpec",
+      "description": "Output varies based on X-axis presence and Color presence",
+      "alternatives": [
+        {
+          "condition": "No X-axis (1D binning)",
+          "joinSpec": {
+            "kind": "OperatorJoinSpec",
+            "joinOperators": [
+              {
+                "kind": "JoinOperator",
+                "joinType": "left",
+                "leftPair": {
+                  "kind": "ColumnPair",
+                  "lColumns": [
+                    "Row",
+                    "Column"
+                  ],
+                  "rColumns": [
+                    "Row",
+                    "Column"
+                  ]
+                },
+                "rightRelation": {
+                  "kind": "TableRelation",
+                  "attributes": [
+                    {
+                      "kind": "Attribute",
+                      "name": "bin_label",
+                      "type": "string"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "bin_id",
+                      "type": "double"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "condition": "With X-axis (2D binning)",
+          "joinSpec": {
+            "kind": "OperatorJoinSpec",
+            "joinOperators": [
+              {
+                "kind": "JoinOperator",
+                "joinType": "left",
+                "leftPair": {
+                  "kind": "ColumnPair",
+                  "lColumns": [
+                    "Row",
+                    "Column"
+                  ],
+                  "rColumns": [
+                    "Row",
+                    "Column"
+                  ]
+                },
+                "rightRelation": {
+                  "kind": "TableRelation",
+                  "attributes": [
+                    {
+                      "kind": "Attribute",
+                      "name": "x_bin_id",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "y_bin_id",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "xy_bin_id",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "x_bin",
+                      "type": "string"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "y_bin",
+                      "type": "string"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "xy_bin",
+                      "type": "string"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "x_count",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "y_count",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "xy_count",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "x_prop",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "y_prop",
+                      "type": "double"
+                    },
+                    {
+                      "kind": "Attribute",
+                      "name": "xy_prop",
+                      "type": "double"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "refactorSuggestion": "Split into bin_1d and bin_2d operators"
+    }
+  ]
+}
