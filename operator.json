@@ -43,7 +43,7 @@
             "name": "Row",
             "type": "",
             "description": "Optional row factor",
-            "ontologyMapping": "row",
+            "ontologyMapping": "variable",
             "crosstabMapping": "row",
             "cardinality": "0..n",
             "factors": []
@@ -53,7 +53,7 @@
             "name": "Column",
             "type": "",
             "description": "Optional column factor",
-            "ontologyMapping": "column",
+            "ontologyMapping": "observation",
             "crosstabMapping": "column",
             "cardinality": "0..n",
             "factors": []
@@ -88,7 +88,7 @@
                 "name": "Color",
                 "type": "",
                 "description": "Optional grouping factor",
-                "ontologyMapping": "color",
+                "ontologyMapping": "group",
                 "crosstabMapping": "color",
                 "cardinality": "0..1",
                 "factors": []
