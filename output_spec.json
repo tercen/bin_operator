@@ -5,6 +5,7 @@
       "description": "Output varies based on X-axis presence and Color presence",
       "alternatives": [
         {
+          "kind": "OutputAlternative",
           "condition": "No X-axis (1D binning)",
           "joinSpec": {
             "kind": "OperatorJoinSpec",
@@ -43,6 +44,7 @@
           }
         },
         {
+          "kind": "OutputAlternative",
           "condition": "With X-axis (2D binning)",
           "joinSpec": {
             "kind": "OperatorJoinSpec",
