@@ -66,7 +66,7 @@
               {
                 "kind": "MetaFactor",
                 "name": "Y Axis",
-                "type": "numeric",
+                "type": "double",
                 "description": "Measurement values",
                 "ontologyMapping": "measurement",
                 "crosstabMapping": "y",
@@ -76,7 +76,7 @@
               {
                 "kind": "MetaFactor",
                 "name": "X Axis",
-                "type": "numeric",
+                "type": "double",
                 "description": "Optional second measurement for 2D binning",
                 "ontologyMapping": "measurement",
                 "crosstabMapping": "x",
